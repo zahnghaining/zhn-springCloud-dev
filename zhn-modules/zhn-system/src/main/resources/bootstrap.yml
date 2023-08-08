@@ -1,0 +1,43 @@
+server:
+  port: 9002
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  application:
+    name: zhn-system
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 124.222.164.80:8848
+      config:
+        server-addr: 124.222.164.80:8848
+        file-extension: yml
+        shared-configs:
+          - "application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}"
+        namespace: zhn
+  rabbitmq:
+    host: 124.222.164.80
+    port: 5672
+    username: guest
+    password: guest
+    virtualHost: /
+    listener:
+      simple:
+        prefetch: 1
+        acknowledge-mode: manual
+        retry:
+          enabled: true
+    publisher-confirm-type: correlated
+    publisher-returns: true
+
+es:
+  host: 124.222.164.80
+  port: 9200
+  scheme: http

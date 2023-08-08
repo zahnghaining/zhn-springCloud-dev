@@ -1,0 +1,30 @@
+# Tomcat
+server:
+  port: 18080
+# Spring
+spring:
+  application:
+    # 应用名称
+    name: zhn-gateway
+  profiles:
+    # 环境配置
+    active: dev
+  main:
+    # 允许使用循环引用
+    allow-circular-references: true
+    # 允许定义相同的bean对象 去覆盖原有的
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        # 服务注册地址
+        server-addr: 124.222.164.80:8848
+      config:
+        # 配置中心地址
+        server-addr: 124.222.164.80:8848
+        # 配置文件格式
+        file-extension: yml
+        # 共享配置
+        shared-configs:
+          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+        namespace: zhn

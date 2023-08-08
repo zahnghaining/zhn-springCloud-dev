@@ -1,0 +1,32 @@
+# Tomcat
+server:
+  port: 9001
+# Spring
+spring:
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  application:
+    # 应用名称
+    name: zhn-auth
+  profiles:
+    # 环境配置
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        # 服务注册地址
+        server-addr: 124.222.164.80:8848
+      config:
+        # 配置中心地址
+        server-addr: 124.222.164.80:8848
+        # 配置文件格式
+        file-extension: yml
+        # 共享配置
+        shared-configs:
+          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+        namespace: zhn
