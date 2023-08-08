@@ -10,6 +10,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 public class SystemMian {
     public static void main(String[] args) {
-        SpringApplication.run(SystemMian.class,args);
+        SpringApplication.run(SystemMian.class, args);
     }
 }

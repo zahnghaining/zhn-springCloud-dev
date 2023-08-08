@@ -17,7 +17,6 @@ public class User {
      * 最后登录时间
      */
     private Date lastLoginTime;
-
     private String balance;
 
 }

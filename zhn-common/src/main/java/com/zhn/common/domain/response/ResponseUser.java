@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Data
 public class ResponseUser {
-    private Long id;
+    private String id;
     private String username;
     private String password;
     private String tel;

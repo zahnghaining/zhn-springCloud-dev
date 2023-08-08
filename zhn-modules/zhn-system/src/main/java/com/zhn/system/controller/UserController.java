@@ -32,7 +32,7 @@ public class UserController {
     }
 
 
-    @PostMapping("//")
+    @PostMapping("/updateUser")
     Result updateUser(@RequestBody RequestUser requestUser){
 
         return userService.updateUser(requestUser);

@@ -49,16 +49,6 @@ export const constantRoutes = [
     },
     children: [
       {
-        path: 'books',
-        name: 'Books',
-        component: () => import('@/views/books/index'),
-        meta: {
-          title: '租书系统',
-          icon: 'books',
-          guest: true
-        }
-      },
-      {
         path: 'e-commerce',
         name: 'E-commerce',
         component: () => import('@/views/e-commerce/index'),

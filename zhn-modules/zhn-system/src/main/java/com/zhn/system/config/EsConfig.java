@@ -15,9 +15,7 @@ import org.springframework.context.annotation.Configuration;
 @Log4j2
 public class EsConfig {
     private String host;
-
     private int port;
-
     private String scheme;
 
     /**
